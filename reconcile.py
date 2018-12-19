@@ -143,7 +143,7 @@ def search(raw_query, query_type='/fast/all'):
         app.logger.debug("FAST API url is " + url)
         resp = requests.get(url)
         results = resp.json()
-    except Exception, e:
+    except Exception as e:
         app.logger.warning(e)
         return out
     for position, item in enumerate(results['response']['docs']):
